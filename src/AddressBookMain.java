@@ -30,6 +30,20 @@ public class AddressBookMain {
         }
     }
 
+    private void delete() {
+        // TODO Auto-generated method stub
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Name To Remove from Contact list: ");
+        String firstName = scanner.nextLine();
+        for (int i = 0; i < contactList.size(); i++) {
+            if (Objects.equals(firstName, contactList.get(i).getFirstName())) {
+                contactList.remove(contactList.get(i));
+                System.out.println("\nDeleted Successfully.....\n");
+            } else
+                System.out.println("The name entered is incorrect.");
+        }
+    }
+
     // To Edit contact
     private void edit() {
         // TODO Auto-generated method stub
