@@ -1,3 +1,4 @@
+        import java.util.Objects;
         import java.util.Scanner;
         import java.util.ArrayList;
 
@@ -26,6 +27,45 @@ public class AddressBookMain {
                     System.out.println("Please Enter 1 or 2 or 3  only");
                     break;
             }
+        }
+    }
+
+    // To Edit contact
+    private void edit() {
+        // TODO Auto-generated method stub
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Name To Edit from Contact list: ");
+        String firstNam = scanner.nextLine();
+        for (Contacts value : contactList) {
+            if (Objects.equals(firstNam, value.getFirstName())) {
+                System.out.print("Enter First Name: ");
+                String firstName = scanner.nextLine();
+                value.setFirstName(firstName);
+                System.out.print("Enter Last Name: ");
+                String lastName = scanner.nextLine();
+                value.setLastName(lastName);
+                System.out.print("Enter Address: ");
+                String address = scanner.nextLine();
+                value.setAddress(address);
+                System.out.print("Enter City: ");
+                String city = scanner.nextLine();
+                value.setCity(city);
+                System.out.print("Enter State: ");
+                String state = scanner.nextLine();
+                value.setState(state);
+                System.out.print("Enter ZipCode: ");
+                String zipcode = scanner.nextLine();
+                value.setZipCode(zipcode);
+                System.out.print("Enter Phone Number: ");
+                String number = scanner.nextLine();
+                value.setNumber(number);
+                System.out.print("Enter Email id: ");
+                String email = scanner.nextLine();
+                value.setEmail(email);
+                System.out.println("\n Success !  contact updated.....\n");
+
+            } else
+                System.out.println("The name entered is incorrect.");
         }
     }
 
